@@ -1,0 +1,27 @@
+# Frontend Dockerfile - Production Build
+FROM node:20-slim AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source
+COPY . .
+
+# Build for production
+RUN npm run build
+
+# Production stage - just the build output
+FROM alpine:3.19
+
+WORKDIR /app
+
+# Copy built files
+COPY --from=builder /app/dist ./dist
+
+# Keep container running briefly to copy files
+CMD ["sleep", "5"]

@@ -1,0 +1,1 @@
+"""Receipt.ai tests."""
