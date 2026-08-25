@@ -5,7 +5,6 @@ import {
   getAccounts,
   exportReceipts,
   deleteReceipt,
-  getReceipt,
 } from '../services/api';
 import type { Receipt } from '../types';
 

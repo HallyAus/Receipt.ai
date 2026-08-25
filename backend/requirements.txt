@@ -15,7 +15,7 @@ redis==5.0.1
 celery[redis]==5.3.6
 
 # OAuth and security
-cryptography==49.0.0
+cryptography==50.0.0
 passlib[bcrypt]==1.7.4
 
 # Google APIs
